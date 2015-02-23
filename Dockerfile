@@ -8,7 +8,7 @@ RUN yum install -y libibmad  libibumad
 RUN yum install -y infiniband-diags 
 RUN yum install -y opensm-libs
 
-RUN echo "20150223.3";yum clean all
+RUN echo "20150223.4";yum clean all
 RUN yum install -y qnib-statsd 
 RUN yum install -y opensm-qnibng qnib-ibsim
 
@@ -28,3 +28,8 @@ ADD opt/qnib/bin/start_opensm.sh /opt/qnib/bin/
 ENV LD_PRELOAD /usr/lib64/umad2sim/libumad2sim.so
 
 ADD etc/consul.d /etc/consul.d
+
+RUN yum install -y python-pip
+RUN pip install neo4jrestclient
+RUN pip install PyYAML
+RUN yum install -y python-envoy
