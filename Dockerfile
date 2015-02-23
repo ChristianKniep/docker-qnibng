@@ -23,7 +23,8 @@ ADD opt/qnib/bin/start_ibsim.sh /opt/qnib/bin/
 ADD etc/supervisord.d/opensm.ini /etc/supervisord.d/opensm.ini
 ADD opt/qnib/bin/start_opensm.sh /opt/qnib/bin/
 
-RUN yum install -y gcc python-devel libibverbs-devel
+#RUN yum install -y gcc python-devel libibverbs-devel
 
 ENV LD_PRELOAD /usr/lib64/umad2sim/libumad2sim.so
 
+ADD etc/consul.d /etc/consul.d

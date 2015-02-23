@@ -1,0 +1,8 @@
+{
+  "check": {
+    "id": "ibsim",
+    "name": "Check if ibsim is working",
+    "script": "supervisorctl status ibsim|grep RUNNING",
+    "interval": "10s"
+  }
+}

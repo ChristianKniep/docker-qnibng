@@ -1,0 +1,8 @@
+{
+  "check": {
+    "id": "opensm",
+    "name": "Check if opensm is working",
+    "script": "supervisorctl status opensm|grep RUNNING",
+    "interval": "10s"
+  }
+}
