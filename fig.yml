@@ -1,0 +1,10 @@
+qnibng:
+   hostname: qnibng
+   image: qnib/qnibng
+   #build: .
+   ports:
+   - 8500:8500
+   environment:
+   - FORWARD_TO_LOGSTASH=false
+
+
