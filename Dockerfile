@@ -17,11 +17,13 @@ ADD etc/opensm/opensm.conf /etc/opensm/opensm.conf
 
 # ibsim
 ADD etc/supervisord.d/ibsim.ini /etc/supervisord.d/ibsim.ini
-ADD root/bin/start_ibsim.sh /root/bin/
+ADD opt/qnib/bin/start_ibsim.sh /opt/qnib/bin/
 
 # opensim (should wait)
 ADD etc/supervisord.d/opensm.ini /etc/supervisord.d/opensm.ini
-ADD root/bin/start_opensm.sh /root/bin/
+ADD opt/qnib/bin/start_opensm.sh /opt/qnib/bin/
 
-CMD /bin/supervisord -c /etc/supervisord.conf
+RUN yum install -y gcc python-devel libibverbs-devel
+
+ENV LD_PRELOAD /usr/lib64/umad2sim/libumad2sim.so
 
