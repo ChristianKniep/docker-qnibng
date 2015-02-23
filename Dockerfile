@@ -8,9 +8,9 @@ RUN yum install -y libibmad  libibumad
 RUN yum install -y infiniband-diags 
 RUN yum install -y opensm-libs
 
-RUN echo "20140816.2";yum clean all;yum install -y qnib-statsd
-RUN yum install -y opensm-qnibng
-RUN yum install -y qnib-ibsim
+RUN echo "20150223.2";yum clean all
+RUN yum install -y qnib-statsd 
+RUN yum install -y opensm-qnibng qnib-ibsim
 
 # config
 ADD etc/opensm/opensm.conf /etc/opensm/opensm.conf
