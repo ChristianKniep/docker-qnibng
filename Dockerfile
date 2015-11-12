@@ -1,6 +1,5 @@
 ###### QNIBng image
 FROM qnib/terminal
-MAINTAINER "Christian Kniep <christian@qnib.org>"
 
 RUN yum install -y bind-utils vim nc
 
@@ -9,8 +8,8 @@ RUN yum install -y infiniband-diags
 RUN yum install -y opensm-libs
 
 RUN echo "20150223.2";yum clean all
-RUN yum install -y qnib-statsd 
-RUN yum install -y opensm-qnibng qnib-ibsim
+RUN yum install -y statsd 
+#RUN yum install -y opensm-qnibng qnib-ibsim
 
 # config
 ADD etc/opensm/opensm.conf /etc/opensm/opensm.conf
